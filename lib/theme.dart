@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 enum ThemeModeType {
   light,
@@ -7,7 +8,8 @@ enum ThemeModeType {
 }
 
 class ThemeManager with ChangeNotifier {
-  ThemeModeType _themeMode = ThemeModeType.system;
+  ThemeModeType _themeMode = ThemeModeType.light;
+  final String _themeModeKey = 'themeMode';
 
   ThemeModeType get themeMode => _themeMode;
 
@@ -24,12 +26,14 @@ class ThemeManager with ChangeNotifier {
         _themeMode = ThemeModeType.light;
         break;
     }
+    _saveThemeMode();
     notifyListeners();
   }
 
   // Method to update theme mode based on user preference
   void updateThemeMode(ThemeModeType mode) {
     _themeMode = mode;
+    _saveThemeMode();
     notifyListeners();
   }
 
@@ -67,4 +71,23 @@ class ThemeManager with ChangeNotifier {
     fontFamily: "Karla",
     useMaterial3: true,
   );
+
+  Future<void> _saveThemeMode() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setInt(_themeModeKey, _themeMode.index);
+  }
+
+  Future<void> _loadThemeMode() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    int? savedThemeMode = prefs.getInt(_themeModeKey);
+    if (savedThemeMode != null) {
+      _themeMode = ThemeModeType.values[savedThemeMode];
+      notifyListeners();
+    }
+  }
+
+  // Constructor to load the theme mode when the class is initialized
+  ThemeManager() {
+    _loadThemeMode();
+  }
 }

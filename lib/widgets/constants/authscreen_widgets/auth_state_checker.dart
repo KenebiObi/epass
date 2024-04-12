@@ -33,72 +33,70 @@ class AuthStateChecker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
-      return Flexible(
-        child: constraints.maxWidth <= 315
-            ? Column(
-                children: [
-                  Text(
-                    isSignInScreen
-                        ? "Already have an account?"
-                        : "Are you new here?",
+      return constraints.maxWidth <= 315
+          ? Column(
+              children: [
+                Text(
+                  isSignInScreen
+                      ? "Already have an account?"
+                      : "Are you new here?",
+                  style: TextStyle(
+                    fontSize: 18.0,
+                    color: Colors.grey[600],
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {
+                    // Navigator.pushReplacement(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (context) => screen,
+                    //   ),
+                    // );
+                    Navigator.of(context).pushReplacement(_createRoute());
+                  },
+                  child: Text(
+                    isSignInScreen ? "Login" : "Sign Up",
                     style: TextStyle(
                       fontSize: 18.0,
-                      color: Colors.grey[600],
+                      color: Theme.of(context).colorScheme.primary,
                     ),
                   ),
-                  TextButton(
-                    onPressed: () {
-                      // Navigator.pushReplacement(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (context) => screen,
-                      //   ),
-                      // );
-                      Navigator.of(context).pushReplacement(_createRoute());
-                    },
-                    child: Text(
-                      isSignInScreen ? "Login" : "Sign Up",
-                      style: TextStyle(
-                        fontSize: 18.0,
-                        color: Theme.of(context).colorScheme.primary,
-                      ),
-                    ),
+                ),
+              ],
+            )
+          : Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  isSignInScreen
+                      ? "Already have an account?"
+                      : "Are you new here?",
+                  style: TextStyle(
+                    fontSize: 18.0,
+                    color: Colors.grey[600],
                   ),
-                ],
-              )
-            : Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    isSignInScreen
-                        ? "Already have an account?"
-                        : "Are you new here?",
+                ),
+                TextButton(
+                  onPressed: () {
+                    // Navigator.pushReplacement(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (context) => screen,
+                    //   ),
+                    // );
+                    Navigator.of(context).pushReplacement(_createRoute());
+                  },
+                  child: Text(
+                    isSignInScreen ? "Login" : "Sign Up",
                     style: TextStyle(
                       fontSize: 18.0,
-                      color: Colors.grey[600],
+                      color: Theme.of(context).colorScheme.primary,
                     ),
                   ),
-                  TextButton(
-                    onPressed: () {
-                      // Navigator.pushReplacement(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (context) => screen,
-                      //   ),
-                      // );
-                      Navigator.of(context).pushReplacement(_createRoute());
-                    },
-                    child: Text(
-                      isSignInScreen ? "Login" : "Sign Up",
-                      style: TextStyle(
-                        fontSize: 18.0,
-                        color: Theme.of(context).colorScheme.primary,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-      );
+                ),
+              ],
+            );
     });
   }
 }

@@ -65,8 +65,32 @@ class DataBaseServices {
     await _userDetailsRef.add(userDetailsWithEncryptedPassword);
   }
 
-  void updateUserDetails(String userDetailId, UserDetails userDetail) {
-    _userDetailsRef.doc(userDetailId).update(userDetail.toJson());
+  void updateUserDetails(String userDetailId, UserDetails userDetail) async {
+    try {
+      // Check if the user provided a new password
+      if (userDetail.password.isNotEmpty) {
+        // Encrypt the new password
+        final encryptedPassword = encryptPassword(userDetail.password);
+
+        // Update the user details with the encrypted password
+        userDetail = userDetail.copyWith(password: encryptedPassword);
+      } else {
+        // Cast existing user details to UserDetails type
+        final existingUserDetailSnapshot =
+            await _userDetailsRef.doc(userDetailId).get();
+        final existingUserDetail =
+            existingUserDetailSnapshot.data() as Map<String, dynamic>;
+        final userDetails = UserDetails.fromJson(existingUserDetail);
+        // Set the password to the existing encrypted password
+        userDetail = userDetail.copyWith(password: userDetails.password);
+      }
+
+      // Update the user details in Firestore
+      await _userDetailsRef.doc(userDetailId).update(userDetail.toJson());
+    } catch (e) {
+      print("Error updating user details: $e");
+      // Handle the error accordingly
+    }
   }
 
   void deleteUserDetails(String userDetailId) {

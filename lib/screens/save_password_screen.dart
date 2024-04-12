@@ -1,6 +1,5 @@
 import 'package:epass/backend/database_service.dart';
 import 'package:flutter/material.dart';
-import 'package:epass/backend/database_service.dart';
 import 'package:epass/backend/user_details.dart';
 import 'package:epass/widgets/save_pass_bottom_sheet.dart';
 import 'package:epass/widgets/save_screen_edit_pass_dialog.dart';
@@ -232,6 +231,9 @@ class _SavepasswordScreenState extends State<SavepasswordScreen> {
                               UserDetails userdetail =
                                   userDetails[index].data();
                               String userdetailId = userDetails[index].id;
+                              final decryptedPassword = _databaseServices
+                                  .decryptPassword(userdetail.password);
+
                               print(userdetail.password);
                               return Column(
                                 children: [
@@ -281,7 +283,7 @@ class _SavepasswordScreenState extends State<SavepasswordScreen> {
                                         );
                                       },
                                       userdetail: userdetail,
-                                      passwordForCopy: userdetail.password,
+                                      passwordForCopy: decryptedPassword,
                                       encryptedPassword: userdetail.password,
                                       index: 1,
                                     ),

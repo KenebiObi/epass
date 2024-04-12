@@ -130,12 +130,18 @@ class _SignUpScreenState extends State<SignUpScreen> {
             child: Stack(
               children: [
                 Positioned(
-                  top: constraints.maxWidth * 0.15,
-                  left: constraints.maxWidth * 0.15,
-                  child: const Text(
+                  top: constraints.maxHeight <= 820
+                      ? constraints.maxHeight * 0.05
+                      : constraints.maxWidth * 0.10,
+                  left: constraints.maxHeight <= 820
+                      ? constraints.maxHeight * 0.05
+                      : constraints.maxWidth * 0.10,
+                  child: Text(
                     "Sign Up",
                     style: TextStyle(
-                      fontSize: 30.0,
+                      fontSize: constraints.maxWidth > 423
+                          ? 30.0
+                          : constraints.maxWidth * 0.07,
                       fontFamily: "Lexend",
                       letterSpacing: 0.5,
                       fontWeight: FontWeight.w800,

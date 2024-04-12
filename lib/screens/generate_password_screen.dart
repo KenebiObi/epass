@@ -21,9 +21,7 @@ class _GeneratepasswordScreenState extends State<GeneratepasswordScreen> {
   bool _addSymbols = false;
   int mainValue = 0;
 
-  String _allCharacters =
-      '!@#\$%^&*()_+qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890';
-  String _allLowerCaseChars = 'qwertyuiopasdfghjklzxcvbnm';
+  final String _allLowerCaseChars = 'qwertyuiopasdfghjklzxcvbnm';
   String _randomPassword = "password";
 
   // Main password to be saved in firebase
@@ -83,7 +81,7 @@ class _GeneratepasswordScreenState extends State<GeneratepasswordScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final deviceHeight = MediaQuery.of(context).size.height;
+    // final deviceHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -130,14 +128,12 @@ class _GeneratepasswordScreenState extends State<GeneratepasswordScreen> {
                           ),
                         ),
                         Center(
-                          child: Flexible(
-                            child: Text(
-                              _randomPassword,
-                              style: TextStyle(
-                                fontSize:
-                                    _randomPassword.length > 13 ? 20.0 : 30.0,
-                                color: Theme.of(context).colorScheme.tertiary,
-                              ),
+                          child: Text(
+                            _randomPassword,
+                            style: TextStyle(
+                              fontSize:
+                                  _randomPassword.length > 13 ? 20.0 : 30.0,
+                              color: Theme.of(context).colorScheme.tertiary,
                             ),
                           ),
                         ),

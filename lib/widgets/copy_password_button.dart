@@ -1,13 +1,13 @@
+import 'package:epass/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 
 class CopyPasswordButton extends StatelessWidget {
   CopyPasswordButton({required this.clipBoardText, super.key});
-  String clipBoardText;
+  final String clipBoardText;
   @override
   Widget build(BuildContext context) {
-    Brightness brightness = MediaQuery.of(context).platformBrightness;
-    bool isDarkMode = brightness == Brightness.dark;
     return Expanded(
       child: GestureDetector(
         onTap: () {
@@ -39,15 +39,14 @@ class CopyPasswordButton extends StatelessWidget {
           height: 70.0,
           width: double.infinity,
           decoration: BoxDecoration(
-            color: isDarkMode
-                ? Theme.of(context).primaryColorLight
-                : Colors.grey[300],
+            color: Theme.of(context).primaryColorLight,
             borderRadius: BorderRadius.circular(20.0),
           ),
           child: Icon(
             Icons.content_copy,
             size: 30.0,
-            color: isDarkMode
+            color: Provider.of<ThemeManager>(context).themeMode ==
+                    ThemeModeType.dark
                 ? Theme.of(context).colorScheme.background
                 : Theme.of(context).colorScheme.primary,
           ),

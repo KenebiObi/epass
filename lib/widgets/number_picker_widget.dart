@@ -5,7 +5,7 @@ class NumberPickerWidget extends StatefulWidget {
   NumberPickerWidget(
       {super.key, required this.mainValue, required this.executable});
 
-  int mainValue;
+  final int mainValue;
   final void Function(int newValue) executable;
 
   @override

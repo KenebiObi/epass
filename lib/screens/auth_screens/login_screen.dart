@@ -117,12 +117,18 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Stack(
                 children: [
                   Positioned(
-                    top: constraints.maxWidth <= 315 ? 20 : 50.0,
-                    left: constraints.maxWidth <= 315 ? 20 : 50.0,
-                    child: const Text(
+                    top: constraints.maxHeight <= 820
+                        ? constraints.maxHeight * 0.05
+                        : constraints.maxWidth * 0.10,
+                    left: constraints.maxHeight <= 820
+                        ? constraints.maxHeight * 0.05
+                        : constraints.maxWidth * 0.10,
+                    child: Text(
                       "Login",
                       style: TextStyle(
-                        fontSize: 30.0,
+                        fontSize: constraints.maxWidth > 423
+                            ? 30.0
+                            : constraints.maxWidth * 0.07,
                         fontFamily: "Lexend",
                         letterSpacing: 0.5,
                         fontWeight: FontWeight.w800,

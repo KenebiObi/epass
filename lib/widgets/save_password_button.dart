@@ -1,4 +1,6 @@
+import 'package:epass/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class SavepasswordButton extends StatelessWidget {
   SavepasswordButton({required this.onTap, super.key});
@@ -7,8 +9,6 @@ class SavepasswordButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Brightness brightness = MediaQuery.of(context).platformBrightness;
-    bool isDarkMode = brightness == Brightness.dark;
     return Expanded(
       child: GestureDetector(
         onTap: onTap,
@@ -16,15 +16,14 @@ class SavepasswordButton extends StatelessWidget {
           height: 70.0,
           width: double.infinity,
           decoration: BoxDecoration(
-            color: isDarkMode
-                ? Theme.of(context).primaryColorLight
-                : Colors.grey[300],
+            color: Theme.of(context).primaryColorLight,
             borderRadius: BorderRadius.circular(20.0),
           ),
           child: Icon(
             Icons.save,
             size: 40.0,
-            color: isDarkMode
+            color: Provider.of<ThemeManager>(context).themeMode ==
+                    ThemeModeType.dark
                 ? Theme.of(context).colorScheme.background
                 : Theme.of(context).colorScheme.primary,
           ),
