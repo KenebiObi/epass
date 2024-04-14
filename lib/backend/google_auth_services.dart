@@ -22,7 +22,10 @@ import 'package:google_sign_in/google_sign_in.dart';
 class GoogleAuthService {
   Future<User?> signInWithGoogle(context) async {
     try {
-      final _googleSignIn = GoogleSignIn();
+      final _googleSignIn = GoogleSignIn(
+        clientId:
+            "908984739654-g4f0ud9ahdhfcpqeig08u7e10lar6i0l.apps.googleusercontent.com",
+      );
       await _googleSignIn.signOut();
 
       final GoogleSignInAccount? gUser = await _googleSignIn.signIn();

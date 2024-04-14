@@ -45,6 +45,18 @@ class ThemeManager with ChangeNotifier {
       tertiary: Colors.grey[700],
       background: Colors.white,
     ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        foregroundColor: const Color.fromRGBO(7, 106, 154, 1.000),
+        shadowColor: Colors.grey[600],
+        surfaceTintColor: Colors.white,
+        elevation: 10.0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20.0),
+        ),
+        minimumSize: const Size(double.infinity, 60.0),
+      ),
+    ),
     fontFamily: "Karla",
     useMaterial3: true,
   );
@@ -58,14 +70,21 @@ class ThemeManager with ChangeNotifier {
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        // backgroundColor: Colors.white,
+        foregroundColor: const Color.fromRGBO(192, 230, 255, 1),
         shadowColor: Colors.grey[600],
+        surfaceTintColor: Colors.black,
         elevation: 10.0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20.0),
         ),
-        // foregroundColor: const Color.fromRGBO(7, 106, 154, 1.000),
-        // minimumSize: const Size(double.infinity, 70.0)
+      ),
+    ),
+    textButtonTheme: TextButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        foregroundColor: const Color.fromRGBO(192, 230, 255, 1),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20.0),
+        ),
       ),
     ),
     fontFamily: "Karla",

@@ -48,10 +48,12 @@ class _CharacterOptionWidgetState extends State<CharacterOptionWidget> {
                           color: Theme.of(context).colorScheme.primary,
                         ),
                         const SizedBox(width: 10.0),
-                        Text(
-                          widget.chracterSelection,
-                          softWrap: true,
-                          style: const TextStyle(fontSize: 18.0),
+                        Expanded(
+                          child: Text(
+                            widget.chracterSelection,
+                            softWrap: true,
+                            style: const TextStyle(fontSize: 18.0),
+                          ),
                         ),
                       ],
                     ),

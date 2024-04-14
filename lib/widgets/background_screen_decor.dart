@@ -20,14 +20,14 @@ class BackgroundScreenDecor extends StatelessWidget {
             top: -380.0,
             left: -210.0,
             child: Container(
-              width: constraints.maxHeight <= 750
-                  ? 480.0
-                  : constraints.maxHeight * 0.62,
-              height: constraints.maxHeight <= 750
-                  ? 480.0
-                  : constraints.maxHeight * 0.62,
-              //  width: 580.0,
-              // height: 580.0,
+              // width: constraints.maxHeight <= 750
+              //     ? 480.0
+              //     : constraints.maxHeight * 0.62,
+              // height: constraints.maxHeight <= 750
+              //     ? 480.0
+              //     : constraints.maxHeight * 0.62,
+              width: 580.0,
+              height: 580.0,
               decoration: BoxDecoration(
                 color: Theme.of(context).colorScheme.primary,
                 shape: BoxShape.circle,
@@ -38,14 +38,14 @@ class BackgroundScreenDecor extends StatelessWidget {
             bottom: -450.0,
             right: -250.0,
             child: Container(
-              width: constraints.maxHeight <= 750
-                  ? 480.0
-                  : constraints.maxHeight * 0.65,
-              height: constraints.maxHeight <= 750
-                  ? 480.0
-                  : constraints.maxHeight * 0.65,
-              // width: 580.0,
-              // height: 580.0,
+              // width: constraints.maxHeight <= 750
+              //     ? 480.0
+              //     : constraints.maxHeight * 0.65,
+              // height: constraints.maxHeight <= 750
+              //     ? 480.0
+              //     : constraints.maxHeight * 0.65,
+              width: 580.0,
+              height: 580.0,
               decoration: BoxDecoration(
                 color: Theme.of(context).colorScheme.primary,
                 shape: BoxShape.circle,

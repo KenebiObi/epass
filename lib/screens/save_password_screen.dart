@@ -197,7 +197,7 @@ class _SavepasswordScreenState extends State<SavepasswordScreen> {
                   ),
                   child: SizedBox(
                     width: double.infinity,
-                    height: deviceHeight * 0.80,
+                    height: deviceHeight * 0.76,
                     child: StreamBuilder(
                       stream: _databaseServices.getUserDetails(),
                       builder: (ctx, snapshot) {

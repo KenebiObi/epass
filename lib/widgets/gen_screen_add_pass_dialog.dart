@@ -66,11 +66,8 @@ class _GenScreenAddPassDialogState extends State<GenScreenAddPassDialog> {
                   ? const SizedBox()
                   : Text(
                       widget.passwordText,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 20.0,
-                        color: isDarkMode
-                            ? Colors.white
-                            : Theme.of(context).colorScheme.primary,
                       ),
                     ),
             ],

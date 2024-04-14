@@ -47,19 +47,12 @@ class AuthStateChecker extends StatelessWidget {
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pushReplacement(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => screen,
-                    //   ),
-                    // );
                     Navigator.of(context).pushReplacement(_createRoute());
                   },
                   child: Text(
                     isSignInScreen ? "Login" : "Sign Up",
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 18.0,
-                      color: Theme.of(context).colorScheme.primary,
                     ),
                   ),
                 ),
@@ -79,19 +72,12 @@ class AuthStateChecker extends StatelessWidget {
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pushReplacement(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => screen,
-                    //   ),
-                    // );
                     Navigator.of(context).pushReplacement(_createRoute());
                   },
                   child: Text(
                     isSignInScreen ? "Login" : "Sign Up",
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 18.0,
-                      color: Theme.of(context).colorScheme.primary,
                     ),
                   ),
                 ),

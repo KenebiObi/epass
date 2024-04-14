@@ -14,7 +14,7 @@ class AuthScreen extends StatelessWidget {
         padding: const EdgeInsets.all(15.0),
         child: Column(
           children: [
-            SizedBox(height: deviceHeight - 696.8),
+            SizedBox(height: deviceHeight * 0.20),
             Image.asset("assets/images/epass_img.png"),
             const Spacer(),
             ElevatedButton(

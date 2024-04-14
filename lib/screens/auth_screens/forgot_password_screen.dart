@@ -1,4 +1,4 @@
-import 'package:epass/widgets/auth_spiner_dialog.dart';
+import 'package:epass/widgets/constants/authscreen_widgets/auth_spiner_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:epass/widgets/background_screen_decor.dart';

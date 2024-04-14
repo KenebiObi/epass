@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:epass/backend/google_auth_services.dart';
 import 'package:epass/screens/auth_screens/login_screen.dart';
 import 'package:epass/screens/hidden_drawer_menu_screen.dart';
-import 'package:epass/widgets/auth_spiner_dialog.dart';
+import 'package:epass/widgets/constants/authscreen_widgets/auth_spiner_dialog.dart';
 import 'package:epass/widgets/background_screen_decor.dart';
 import 'package:epass/widgets/constants/authscreen_widgets/auth_state_checker.dart';
 import 'package:epass/widgets/constants/authscreen_widgets/email_textfield.dart';
@@ -182,7 +182,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 fontSize: 22.0,
                               ),
                             ),
-                            const SizedBox(height: 30.0),
+                            const SizedBox(height: 15.0),
                             // Email textfield
                             EmailTextfield(emialController: _EmailTextfield),
                             const SizedBox(height: 15.0),
@@ -199,7 +199,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               isChanged: _isChanged,
                               isConfirmPassword: true,
                             ),
-                            const SizedBox(height: 30.0),
+                            const SizedBox(height: 15.0),
                             SignUpLoginButton(
                               onPressed: signUp,
                               isSignUpScreen: true,
@@ -228,7 +228,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             const Text(
                               "Or",
                               style: TextStyle(
-                                fontSize: 25.0,
+                                fontSize: 20.0,
                               ),
                             ),
                             const SizedBox(height: 10.0),

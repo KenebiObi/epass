@@ -20,16 +20,13 @@ class SignUpLoginButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(20.0),
         ),
         minimumSize: const Size(double.infinity, 60.0),
-        // backgroundColor:
-        //     Theme.of(context).colorScheme.primary,
       ),
       onPressed: onPressed,
       child: Text(
         isSignUpScreen ? "Sign Up" : "Login",
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 20.0,
           fontFamily: "Karla",
-          color: Theme.of(context).colorScheme.primary,
         ),
       ),
     );

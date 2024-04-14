@@ -44,7 +44,7 @@ class _SavedPasswordTileWidgetState extends State<SavedPasswordTileWidget> {
     return LayoutBuilder(builder: (context, constraints) {
       return Container(
         padding: const EdgeInsets.all(12.0),
-        width: MediaQuery.of(context).size.width * 0.90,
+        // width: MediaQuery.of(context).size.width * 0.90,
         height: 73.0,
         decoration: BoxDecoration(
           color: Theme.of(context).primaryColorLight,
